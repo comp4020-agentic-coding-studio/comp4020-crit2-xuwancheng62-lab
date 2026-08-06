@@ -36,6 +36,44 @@ and see `spec/README.md` for how the checks in this repo relate to it.
   be.
 - Commit when the checks pass. Never commit a red state.
 
+## Directing this project
+
+These rules are mine, carried forward and added to each week. Each one is here
+because something actually went wrong, or nearly did --- not because it sounded
+like good practice.
+
+- **Scope is mine to set.** Don't add pages, sections or features I haven't asked
+  for. If you think something is missing, say so and let me decide. On crit 1 you
+  wrote two pages I never requested; the content was accurate, and I still
+  deleted one of them because it repeated the other.
+- **Explain mechanisms I can't audit.** I don't know web development. When you use
+  a mechanism I'm unlikely to recognise --- CSS sibling selectors, `:checked`
+  state, grid, container queries, and now Astro's layouts, components and content
+  collections --- leave a short comment saying what it does and why you chose it. I
+  can judge content and behaviour; I can't reliably review code I've never
+  written, and a green check doesn't mean I understood the diff.
+- **Be careful with facts about real things.** These sites make claims about real
+  subjects: on crit 1 a real product and era, on crit 2 a real organisation and
+  what its current site gets wrong. Hedge anything uncertain, never invent
+  statistics, dates, prices or opening hours, and flag any claim I should check
+  myself. I can verify what I have seen first-hand; I can't verify the rest.
+- **Both viewports before you call it done.** 1920×1080 and 390×844 both count in
+  full at marking. Look at the rendered page with `agent-browser` and tell me what
+  you saw --- don't infer it from the CSS.
+- **Anything that appears on every page has to sit in the same place on every
+  page.** The nav especially. On crit 1 my four pages had titles and subtitles of
+  different lengths; on a phone they wrapped to different numbers of lines, so the
+  nav underneath started lower on some pages than others and the buttons jumped as
+  I clicked between them. Nothing catches this on a single page --- you have to
+  move through all of them at 390×844 and watch whether the shared furniture
+  holds still.
+- **Turn a brief's constraints into tests before building.** Crit 1 asked for no
+  JavaScript, so the rule became a spec test that fails on any `<script>` in the
+  built output. A constraint I'm only holding in my head is one I'll lose.
+- **My own checks are mine to change --- out loud.** If a check I wrote blocks a
+  change I've decided on, change the check deliberately and leave a comment
+  saying why. Never relax one quietly to get green.
+
 ## The checks (your sensors)
 
 CI runs these on every push once your repo is public. GitHub's checks UI shows
