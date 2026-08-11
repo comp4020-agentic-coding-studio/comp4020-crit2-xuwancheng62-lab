@@ -30,7 +30,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 172,
     genre: "Drama, Adventure",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/The_Odyssey_%282026_film%29.jpg/500px-The_Odyssey_%282026_film%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/9/90/The_Odyssey_%282026_film%29_poster.jpg",
     posterAlt: "The Odyssey (2026) theatrical poster",
     synopsis:
       "Twenty years after the fall of Troy, a king still hasn't made it home. Christopher Nolan's IMAX-shot epic follows Odysseus's monster-strewn voyage back to Ithaca, and the wife and kingdom that can't wait forever.",
@@ -45,7 +45,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 145,
     genre: "Action, Adventure",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Spider-Man_Brand_New_Day_poster.jpg/500px-Spider-Man_Brand_New_Day_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Spider-Man_Brand_New_Day_poster.jpg/500px-Spider-Man_Brand_New_Day_poster.jpg",
     posterAlt: "Spider-Man: Brand New Day theatrical poster",
     synopsis:
       "Years after erasing himself from everyone's memory, Peter Parker is still swinging through a New York that doesn't know his name. When an unseen threat starts closing in on the people he gave up to protect, staying anonymous stops being an option.",
@@ -60,7 +60,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 102,
     genre: "Animation, Adventure, Comedy",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Toy_Story_5_poster.jpg/500px-Toy_Story_5_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Toy_Story_5_poster.jpg/500px-Toy_Story_5_poster.jpg",
     posterAlt: "Toy Story 5 theatrical poster",
     synopsis:
       "A tablet called Lilypad turns up in Bonnie's room with better ideas about what's good for her than any toy ever had. Woody, Buzz and the rest of the gang have to work out where that leaves them: analog toys up against a screen that never needs winding down.",
@@ -75,7 +75,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 87,
     genre: "Horror",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Ice_Cream_Man_%282026_film%29_poster.jpg/500px-Ice_Cream_Man_%282026_film%29_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Ice_Cream_Man_poster.jpg/500px-Ice_Cream_Man_poster.jpg",
     posterAlt: "Ice Cream Man (2026) theatrical poster",
     synopsis:
       "A quiet lakeside town gets a new ice cream van one summer, and what it's selling doesn't stay sweet for long. Eli Roth's slasher turns a childhood staple into the thing everyone should have been afraid of.",
@@ -90,7 +90,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 100,
     genre: "Action, Comedy",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Super_Troopers_3_poster.jpg/500px-Super_Troopers_3_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Super_Troopers_3_poster.jpeg/500px-Super_Troopers_3_poster.jpeg",
     posterAlt: "Super Troopers 3 theatrical poster",
     synopsis:
       "Farva's engagement to Thorny's sister should be the easy part of this wedding. Between Thorny trying to sabotage it and a drug ring the Troopers stumble into along the way, the ceremony is very much in doubt.",
@@ -105,7 +105,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 101,
     genre: "Comedy, Drama",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Holy_Days_film_poster.jpg/500px-Holy_Days_film_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Holy_days.jpg/500px-Holy_days.jpg",
     posterAlt: "Holy Days theatrical poster",
     synopsis:
       "In 1970s New Zealand, a grieving boy convinced his mother is waiting for him on a snowy mountain talks three elderly nuns into helping him find her, and ends up saving their convent from closure along the way.",
@@ -120,7 +120,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 115,
     genre: "Adventure, Family, Fantasy, Musical",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Moana_%282026_film%29_poster.jpg/500px-Moana_%282026_film%29_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Moana_%282026_film%29_poster.jpg/500px-Moana_%282026_film%29_poster.jpg",
     posterAlt: "Moana (2026 live-action) theatrical poster",
     synopsis:
       "Disney's live-action retelling sends Moana past the reef of her home island for the first time, alongside the demigod Maui, to put right what a generation of her ancestors couldn't.",
@@ -135,7 +135,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 90,
     genre: "Animation, Comedy",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Minions_%26_Monsters_poster.jpg/500px-Minions_%26_Monsters_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Minions_%26_Monsters_poster.jpg/500px-Minions_%26_Monsters_poster.jpg",
     posterAlt: "Minions & Monsters theatrical poster",
     synopsis:
       "Decades before Gru, the Minions get their shot at 1920s Hollywood stardom, and lose it just as fast, after a stunt to save their movie accidentally unleashes real monsters on the city they were trying to entertain.",
@@ -150,7 +150,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 106,
     genre: "Horror, Mystery, Thriller",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Insidious_Out_of_the_Further_poster.jpg/500px-Insidious_Out_of_the_Further_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Insidious-out-of-the-further-poster.png/500px-Insidious-out-of-the-further-poster.png",
     posterAlt: "Insidious: Out of the Further theatrical poster",
     synopsis:
       "A mother who can slip into the Further finds out the ability runs both ways, and that whatever lives there has started following her back.",
@@ -166,7 +166,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 130,
     genre: "Fantasy, Romance",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Practical_Magic_2_poster.jpg/500px-Practical_Magic_2_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Practical_Magic_2_%28film_poster%29.png/500px-Practical_Magic_2_%28film_poster%29.png",
     posterAlt: "Practical Magic 2 theatrical poster",
     synopsis:
       "Twenty-five years on, the Owens sisters' family curse turns out to have unfinished business. Sandra Bullock and Nicole Kidman return to deal with it.",
@@ -182,7 +182,7 @@ export const movies: Movie[] = [
     runtimeMinutes: 88,
     genre: "Animation, Adventure, Family",
     posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Paw_Patrol_The_Dino_Movie_poster.jpg/500px-Paw_Patrol_The_Dino_Movie_poster.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/a/ab/Paw_Patrol-_The_Dino_Movie_poster.jpg",
     posterAlt: "Paw Patrol: The Dino Movie theatrical poster",
     synopsis:
       "A storm strands the pups on an island that time, and Humdinger's mining operation, forgot: dinosaurs included. It's the team's biggest rescue yet, with a volcano on a deadline.",

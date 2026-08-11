@@ -1,0 +1,42 @@
+---
+// Fixed column counts (not auto-fit/minmax) so the row count is guaranteed
+// regardless of how many cards there are or how long a title runs: exactly 4
+// per row on desktop, exactly 2 per row on the ~390px phone viewport that
+// gets marked.
+import MovieCard from "./MovieCard.astro";
+import type { Movie } from "../data/movies";
+
+interface Props {
+  movies: Movie[];
+}
+
+const { movies } = Astro.props;
+---
+
+<ul class="movie-grid">
+  {
+    movies.map((movie) => (
+      <li>
+        <MovieCard movie={movie} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .movie-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 700px) {
+    .movie-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+  }
+</style>

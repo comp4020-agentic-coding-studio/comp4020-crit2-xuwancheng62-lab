@@ -1,0 +1,83 @@
+---
+// One card per movie: poster, title, classification, runtime, genre only —
+// no synopsis or booking action here. The poster is the largest thing on the
+// card on purpose, since the homepage's job is fast visual scanning, not
+// selling an individual title.
+import { href } from "../lib/url";
+import type { Movie } from "../data/movies";
+
+interface Props {
+  movie: Movie;
+}
+
+const { movie } = Astro.props;
+const runtime = `${Math.floor(movie.runtimeMinutes / 60)}h ${movie.runtimeMinutes % 60}m`;
+---
+
+<a class="card" href={href(`/movies/${movie.slug}/`)}>
+  <img
+    class="card__poster"
+    src={movie.posterUrl}
+    alt={movie.posterAlt}
+    loading="lazy"
+    width="500"
+    height="740"
+  />
+  <div class="card__body">
+    <h3 class="card__title">{movie.title}</h3>
+    <p class="card__meta">
+      <span class="card__classification">{movie.classification}</span>
+      <span>{runtime}</span>
+      <span>{movie.genre}</span>
+    </p>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: block;
+    color: var(--colour-text);
+  }
+
+  .card:hover {
+    text-decoration: none;
+  }
+
+  .card:hover .card__title {
+    color: var(--colour-accent);
+  }
+
+  .card__poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: var(--colour-surface);
+    border-radius: var(--radius);
+  }
+
+  .card__body {
+    padding-top: var(--space-2);
+  }
+
+  .card__title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin: 0 0 var(--space-1);
+  }
+
+  .card__meta {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--colour-text-muted);
+  }
+
+  .card__classification {
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius);
+    padding: 0 var(--space-1);
+    color: var(--colour-text);
+  }
+</style>

@@ -1,14 +1,46 @@
 ---
 import Base from "../layouts/Base.astro";
+import MovieGrid from "../components/MovieGrid.astro";
+import { nowShowing, comingSoon } from "../data/movies";
 ---
 
 <Base
-  title="Crit 2 — placeholder"
-  description="Scaffolding only. Replace with the redesign."
+  title="HOYTS Cinemas — Now Showing"
+  description="Real HOYTS movies, sorted by what's actually on: Now Showing and Coming Soon."
 >
-  <h1>Crit 2 scaffolding</h1>
-  <p>
-    Astro is wired up and the build contract holds. Nothing here is the
-    prototype — replace this page once you've picked the organisation.
-  </p>
+  <h1 class="visually-hidden">HOYTS Cinemas</h1>
+  <section aria-labelledby="now-showing">
+    <h2 id="now-showing">Now Showing</h2>
+    <MovieGrid movies={nowShowing} />
+  </section>
+
+  <section class="coming-soon" aria-labelledby="coming-soon">
+    <h2 id="coming-soon">Coming Soon</h2>
+    <MovieGrid movies={comingSoon} />
+  </section>
 </Base>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  section {
+    padding-top: var(--space-5);
+  }
+
+  .coming-soon {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--colour-border);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+</style>
