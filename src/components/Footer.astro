@@ -1,16 +1,18 @@
 ---
 import { href } from "../lib/url";
+
+const here = Astro.url.pathname;
 ---
 
 <footer class="site-footer">
   <p>
     An unsolicited redesign concept for HOYTS Cinemas, not affiliated with or
-    endorsed by HOYTS. For real sessions, bookings and accounts, visit
+    endorsed by HOYTS. For real sessions, bookings and accounts, visit{" "}
     <a href="https://www.hoyts.com.au/" target="_blank" rel="noreferrer"
       >hoyts.com.au</a
     >.
   </p>
-  <p><a href={href("/cinemas/")}>Find a cinema</a></p>
+  <p><a href={href("/cinemas/", here)}>Find a cinema</a></p>
 </footer>
 
 <style>

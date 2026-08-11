@@ -12,9 +12,10 @@ interface Props {
 
 const { movie } = Astro.props;
 const runtime = `${Math.floor(movie.runtimeMinutes / 60)}h ${movie.runtimeMinutes % 60}m`;
+const here = Astro.url.pathname;
 ---
 
-<a class="card" href={href(`/movies/${movie.slug}/`)}>
+<a class="card" href={href(`/movies/${movie.slug}/`, here)}>
   <img
     class="card__poster"
     src={movie.posterUrl}

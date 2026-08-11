@@ -4,14 +4,16 @@
 // remembering to copy it — matches CLAUDE.md's "shared furniture holds
 // still" rule.
 import { href } from "../lib/url";
+
+const here = Astro.url.pathname;
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="brand" href={href("/")}>HOYTS Cinemas</a>
+    <a class="brand" href={href("/", here)}>HOYTS Cinemas</a>
     <nav aria-label="Primary">
-      <a href={href("/")}>Movies</a>
-      <a href={href("/cinemas/")}>Cinemas</a>
+      <a href={href("/", here)}>Movies</a>
+      <a href={href("/cinemas/", here)}>Cinemas</a>
     </nav>
   </div>
 </header>

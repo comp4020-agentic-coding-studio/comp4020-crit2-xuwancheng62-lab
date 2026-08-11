@@ -16,13 +16,14 @@ export function getStaticPaths() {
 
 const { movie } = Astro.props;
 const runtime = `${Math.floor(movie.runtimeMinutes / 60)}h ${movie.runtimeMinutes % 60}m`;
+const here = Astro.url.pathname;
 ---
 
 <Base
   title={`${movie.title} — HOYTS Cinemas`}
   description={movie.synopsis}
 >
-  <a class="back" href={href("/")}>&larr; Back to Movies</a>
+  <a class="back" href={href("/", here)}>&larr; Back to Movies</a>
 
   <article class="detail">
     <img
