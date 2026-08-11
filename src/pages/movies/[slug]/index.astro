@@ -1,0 +1,134 @@
+---
+// One static page per movie, generated at build time from src/data/movies.ts.
+// getStaticPaths is Astro's way of turning a data array into a fixed set of
+// HTML files — there's no server here, every one of these pages is written
+// to dist/ at build time like any other page.
+import Base from "../../../layouts/Base.astro";
+import { href } from "../../../lib/url";
+import { movies } from "../../../data/movies";
+
+export function getStaticPaths() {
+  return movies.map((movie) => ({
+    params: { slug: movie.slug },
+    props: { movie },
+  }));
+}
+
+const { movie } = Astro.props;
+const runtime = `${Math.floor(movie.runtimeMinutes / 60)}h ${movie.runtimeMinutes % 60}m`;
+---
+
+<Base
+  title={`${movie.title} — HOYTS Cinemas`}
+  description={movie.synopsis}
+>
+  <a class="back" href={href("/")}>&larr; Back to Movies</a>
+
+  <article class="detail">
+    <img
+      class="detail__poster"
+      src={movie.posterUrl}
+      alt={movie.posterAlt}
+      width="500"
+      height="740"
+    />
+    <div class="detail__info">
+      <h1>{movie.title}</h1>
+      <p class="detail__meta">
+        <span class="detail__classification">{movie.classification}</span>
+        <span>{runtime}</span>
+        <span>{movie.genre}</span>
+        {movie.releaseDate && <span>In cinemas {movie.releaseDate}</span>}
+      </p>
+      <p class="detail__synopsis">{movie.synopsis}</p>
+      <div class="detail__actions">
+        {
+          movie.trailerUrl && (
+            <a href={movie.trailerUrl} target="_blank" rel="noreferrer">
+              Watch trailer (YouTube)
+            </a>
+          )
+        }
+        <a href={movie.hoytsUrl} target="_blank" rel="noreferrer">
+          Book at HOYTS &rarr;
+        </a>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .back {
+    display: inline-block;
+    margin-top: var(--space-4);
+    color: var(--colour-text-muted);
+  }
+
+  .detail {
+    margin-top: var(--space-4);
+    display: grid;
+    grid-template-columns: minmax(0, 320px) 1fr;
+    gap: var(--space-5);
+  }
+
+  .detail__poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background: var(--colour-surface);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    color: var(--colour-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .detail__classification {
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius);
+    padding: 0 var(--space-1);
+    color: var(--colour-text);
+  }
+
+  .detail__synopsis {
+    font-size: var(--text-lg);
+    max-width: 40em;
+  }
+
+  .detail__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .detail__actions a {
+    border: 1px solid var(--colour-accent);
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .detail__actions a:hover {
+    background: var(--colour-accent);
+    color: var(--colour-accent-text);
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .detail {
+      grid-template-columns: 1fr;
+    }
+
+    .detail__poster {
+      max-width: 60vw;
+    }
+  }
+</style>
