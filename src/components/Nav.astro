@@ -1,0 +1,64 @@
+---
+// Shared primary nav. Rendered once, from Base.astro, so its markup and
+// position are identical on every page by construction rather than by
+// remembering to copy it — matches CLAUDE.md's "shared furniture holds
+// still" rule.
+import { href } from "../lib/url";
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href={href("/")}>HOYTS Cinemas</a>
+    <nav aria-label="Primary">
+      <a href={href("/")}>Movies</a>
+      <a href={href("/cinemas/")}>Cinemas</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--colour-border);
+    background: var(--colour-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .site-header__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .brand {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--colour-text);
+    letter-spacing: 0.02em;
+  }
+
+  .brand:hover {
+    text-decoration: none;
+    color: var(--colour-accent);
+  }
+
+  nav[aria-label="Primary"] {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  nav[aria-label="Primary"] a {
+    color: var(--colour-text);
+    font-size: var(--text-base);
+  }
+
+  nav[aria-label="Primary"] a:hover {
+    color: var(--colour-accent);
+    text-decoration: none;
+  }
+</style>
