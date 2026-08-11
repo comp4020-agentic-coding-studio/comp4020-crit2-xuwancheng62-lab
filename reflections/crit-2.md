@@ -2,24 +2,21 @@
 
 **What was the breakthrough that moved the work forward?**
 
-The breakthrough was realising that the agent should not begin by writing
-code. My initial idea — redesign the HOYTS website so that movies are easier
-to discover, with four movie cards per row on desktop — left many decisions
-undefined.
+The breakthrough was not simply creating a PLAN.md. It was moving important
+decisions to a point before implementation. My initial idea — redesign the
+HOYTS website so that movies are easier to discover, with four movie cards per
+row on desktop — left much undefined, and asking the agent to inspect the
+specification and repository and produce a plan first exposed assumptions that
+would otherwise have become code silently: which cinemas to show, how many
+titles to include, whether trailers should be embedded, and where the boundary
+between movie discovery and booking should sit.
 
-So instead of asking the agent to implement the website, I asked it to first
-inspect the specification and repository and produce a PLAN.md. This exposed
-decisions I had not considered: how many movies to include, which cinemas to
-show, how navigation should be structured, whether trailers should be
-embedded, and where the boundary between movie discovery and booking should
-sit.
-
-The important part was that I did not simply accept the plan. I reviewed and
-corrected it before implementation — Canberra/ACT cinemas instead of
-arbitrary flagship locations, four cards per row on desktop, navigation
-limited to Movies and Cinemas, real booking kept outside the redesign. The
-plan became a shared reference between my design intent and the agent's
-implementation, rather than something I judged only afterwards.
+Reviewing those decisions let me correct the agent while changes were still
+cheap. I chose Canberra/ACT cinemas rather than arbitrary flagship locations,
+fixed the desktop layout at four cards per row, limited navigation to Movies
+and Cinemas, and kept real booking outside the redesign. I realised that the
+value of planning in agentic development is not the document itself, but the
+opportunity it creates for human judgement before implementation.
 
 **What did this work change about who I want to be as a software developer?**
 
