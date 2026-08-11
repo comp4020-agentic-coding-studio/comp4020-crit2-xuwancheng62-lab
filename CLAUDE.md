@@ -45,7 +45,11 @@ like good practice.
 - **Scope is mine to set.** Don't add pages, sections or features I haven't asked
   for. If you think something is missing, say so and let me decide. On crit 1 you
   wrote two pages I never requested; the content was accurate, and I still
-  deleted one of them because it repeated the other.
+  deleted one of them because it repeated the other. When a change meets the
+  trigger test in
+  [Planning and human--agent decision making](#planning-and-humanagent-decision-making),
+  the place to raise it is `PLAN.md` before you build --- not a note in the diff
+  afterwards.
 - **Explain mechanisms I can't audit.** I don't know web development. When you use
   a mechanism I'm unlikely to recognise --- CSS sibling selectors, `:checked`
   state, grid, container queries, and now Astro's layouts, components and content
@@ -57,6 +61,15 @@ like good practice.
   what its current site gets wrong. Hedge anything uncertain, never invent
   statistics, dates, prices or opening hours, and flag any claim I should check
   myself. I can verify what I have seen first-hand; I can't verify the rest.
+- **Data you generated is a claim until you check it against the source.** Not
+  the same as hedging an uncertain fact above --- this is about values you
+  produce with complete confidence: URLs, file paths, identifiers, version
+  numbers, the shape of an API. On crit 2 you wrote all twelve Wikimedia poster
+  URLs from memory instead of fetching them. Every one looked right and every
+  one 404'd, and the types, the build and the whole spec suite stayed green,
+  because a broken external image isn't a broken build. Fetch it, `curl` it, or
+  read it off the live source before it goes in a file --- and tell me which of
+  those you did, so I know the difference between checked and merely plausible.
 - **Both viewports before you call it done.** 1920×1080 and 390×844 both count in
   full at marking. Look at the rendered page with `agent-browser` and tell me what
   you saw --- don't infer it from the CSS.
@@ -73,6 +86,56 @@ like good practice.
 - **My own checks are mine to change --- out loud.** If a check I wrote blocks a
   change I've decided on, change the check deliberately and leave a comment
   saying why. Never relax one quietly to get green.
+
+## Planning and human--agent decision making
+
+On crit 2 I nearly handed you a one-line brief --- "make movies easier to find,
+four cards a row" --- and let you build. Asking for a `PLAN.md` first instead
+surfaced four decisions I hadn't made yet (which cinemas, how many titles,
+whether trailers embed, where discovery stops and booking starts), and I
+overrode your default on every one of them. That review is the reason the site
+matches what I wanted. This section is here to make it repeatable.
+
+**The trigger test.** Plan before you implement if the change would:
+
+- add or remove a page, section, or navigation entry;
+- change what the site claims about a real thing --- an organisation, product,
+  person or place;
+- change the visual system: palette, type scale, layout structure, or how many
+  cards sit in a row;
+- change what the reader can do on the site.
+
+Anything else is implementation detail and yours to handle. **If you can't tell
+which side a change falls on, it's a planning decision.** On crit 2 you made two
+calls that sat right on this line without raising either: a visually-hidden
+`<h1>` so the section heading could carry the visual weight, and a two-column
+desktop grid on the cinemas page. Both were reasonable and I'd have approved
+both --- that's not the point. I want to be asked.
+
+Then:
+
+1. Read the brief, the spec, the existing code and the project context before
+   proposing anything.
+2. Write `PLAN.md`. It should name the problem being solved, the proposed
+   approach and structure, the assumptions and ambiguities, the design decisions
+   and the constraints the spec imposes, and --- separately --- what can be
+   machine-checked versus what needs my judgement.
+3. Put ambiguities in the plan rather than resolving them quietly. An ambiguity
+   you settled without telling me is indistinguishable, in the diff, from one
+   you never noticed.
+4. **Once I approve `PLAN.md`, it's frozen.** Don't edit it to match what you
+   ended up building. If the work needs to depart from it, stop and explain the
+   departure to me, and I'll decide whether to accept it or amend the plan
+   deliberately. A plan I approved and you then rewrote is evidence of nothing;
+   a stale plan plus a record of the departures is evidence of how the work
+   actually went.
+5. Implementation may then proceed autonomously as far as it doesn't alter the
+   agreed product intent, scope, or design direction.
+
+The document is not the point --- the review is. A `PLAN.md` I never argued with
+has done nothing for either of us. And this rule outranks any default that
+biases you toward pressing on without asking: on a trigger-test change, stopping
+is the correct behaviour, not a failure to be helpful.
 
 ## The checks (your sensors)
 
