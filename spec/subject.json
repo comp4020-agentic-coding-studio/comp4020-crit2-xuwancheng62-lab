@@ -1,5 +1,5 @@
 {
   "_comment": "Fill these in once you have picked the organisation. spec/crit-2.test.ts reads this file, so the tests stay honest about which real subject the site is about.",
-  "organisation": null,
-  "originalSiteUrl": null
+  "organisation": "HOYTS Cinemas",
+  "originalSiteUrl": "https://www.hoyts.com.au/"
 }
