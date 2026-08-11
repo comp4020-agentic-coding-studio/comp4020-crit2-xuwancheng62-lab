@@ -42,7 +42,15 @@ jobs:
         if: ${{ !github.event.repository.is_template }}
         run: pnpm check:evidence
       - name: Check internal links
-        run: pnpm dlx linkinator ./dist --silent
+        # --retry is a deliberate change to the course boilerplate. This scan
+        # also follows external links, and the twelve poster URLs all point at
+        # upload.wikimedia.org, which throttles a burst of twelve concurrent
+        # requests from a shared Actions IP and returns 429. Fetched serially
+        # every one is a 200, so those were never broken links. --retry honours
+        # the Retry-After header instead of failing on it. Keeping the external
+        # scan matters here specifically: a poster URL silently going dead is
+        # the exact bug that already hit this project once (see PROCESS.md).
+        run: pnpm dlx linkinator ./dist --silent --retry
       - name: Scan for committed secrets
         # Pinned, both halves: the SHA fixes the action's script, and `version`
         # fixes the scanner image, which otherwise floats on :latest. These two
